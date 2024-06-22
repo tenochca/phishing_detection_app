@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<h1>Testing</h1>
+<h1>Phishing Detection</h1>
 {% endblock %}
 
 
 {% block body %}
-
+<form>
+    <label for="sline">Subject Line:</label><br>
+    <input type="text" id="sline" name="sline"><br>
+    <label for="body">Email Body:</label><br>
+    <textarea id="body" name="body" rows="4" cols="40"></textarea>
+</form>
 {% endblock %}
 
