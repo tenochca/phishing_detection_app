@@ -6,11 +6,12 @@
 
 
 {% block body %}
-<form>
+<form action="/" method="POST">
     <label for="sline">Subject Line:</label><br>
     <input type="text" id="sline" name="sline"><br>
     <label for="body">Email Body:</label><br>
     <textarea id="body" name="body" rows="4" cols="40"></textarea>
+    <input type="submit" value="submit">
 </form>
 {% endblock %}
 
