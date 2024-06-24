@@ -26,7 +26,8 @@ def index():
         sender = request.form.get('sender')
         subject = request.form.get('sline')
         body = request.form.get('body')
-
+        if body == '' or sender == '' or subject == '':
+            return "Missing 1 (or more) required fields\n Please use the back arrow to return to classifier"
         data = prep_data(sender, subject, body)
         pred = model.predict(data)
         label = [1 if prob > 0.5 else 0 for prob in pred]
