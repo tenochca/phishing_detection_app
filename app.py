@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, url_for
 from keras.models import load_model
 from tensorflow.keras.preprocessing.text import Tokenizer #type: ignore
 from keras.preprocessing.sequence import pad_sequences
@@ -27,14 +27,14 @@ def index():
         subject = request.form.get('sline')
         body = request.form.get('body')
 
-        data = prep_data(subject, body)
+        data = prep_data(sender, subject, body)
         pred = model.predict(data)
         label = [1 if prob > 0.5 else 0 for prob in pred]
 
         if label[0] == 1:
-            return "SPAM"
+            return render_template('scam.html')
         elif label[0] == 0:
-            return "OK"
+            return render_template('okay.html')
         else:
             print(pred)
             print(label)

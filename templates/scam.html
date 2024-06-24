@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{%block body %}
+<div class="message">
+    <h1>SCAM</h1>
+    <br>
+    <p>
+        This email was detected to be a phishing attempt. Please disregard and delete the email!
+        <br>
+        <br>
+        <a href="{{url_for('index')}}">Click here to return</a>
+    </p>
+</div>
+{% endblock %}
