@@ -10,13 +10,29 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-top: 20;
 }
 
 .header {
-    border-bottom: 1px dotted whitesmoke;
+    border-bottom: 1px dotted rgb(142, 142, 142);
 }
 
+a {
+    text-decoration: none;
+    color:cornflowerblue
+}
+
+input[type='submit'] {
+    font-family: 'Share Tech Mono', Courier, monospace;
+    background-color: rgb(158, 158, 158);
+    margin:8px 0px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: cornflowerblue;
+}
 
 
 
