@@ -11,9 +11,9 @@ model = load_model('model.keras')
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
-def prep_data(subject, body):
+def prep_data(sender, subject, body):
     'prep subject and body txt data'
-    data = [subject + ' ' + body]
+    data = [sender + ' ' + subject + ' ' + body]
     seq = tokenizer.texts_to_sequences(data)
     X = pad_sequences(seq, maxlen=100)
     return X
@@ -23,6 +23,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        sender = request.form.get('sender')
         subject = request.form.get('sline')
         body = request.form.get('body')
 

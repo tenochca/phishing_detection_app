@@ -1,13 +1,22 @@
 body {
+    background-color:#222;
+    color:whitesmoke;
     font-size:larger;
-    margin: 20;
-    font-family: monospace;
+    margin: 10;
+    font-family: 'Share Tech Mono', Monospace, Courier;
+    font-weight: 400;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-top: 20;
 }
+
+.header {
+    border-bottom: 1px dotted whitesmoke;
+}
+
 
 
 
