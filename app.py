@@ -30,10 +30,14 @@ def index():
         pred = model.predict(data)
         label = [1 if prob > 0.5 else 0 for prob in pred]
 
-        if label.pop == 1:
-            return "SCAM"
+        if label[0] == 1:
+            return "SPAM"
+        elif label[0] == 0:
+            return "OK"
         else:
-            return 'OK'
+            print(pred)
+            print(label)
+            return "FAIL"
     else:
         return render_template('index.html')
 
